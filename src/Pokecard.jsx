@@ -1,8 +1,10 @@
+import './Pokecard.css';
+
 /** Pokecard div of name, img, type, exp */
 function Pokecard({ name, type, exp, id }) {
 
   const imgUrl =
-  `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
+    `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
 
   return (<div className="Pokecard">
     <h1 className="Pokecard-name">{name}</h1>
