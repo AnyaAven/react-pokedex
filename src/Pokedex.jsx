@@ -11,7 +11,11 @@ function Pokedex({ pokemon }) {
       id={p.id} />
   );
 
-  return (<div className="Pokedex">{pokecards}</div>);
+  return (
+    <div className="Pokedex">
+      <h1 className="Pokedex-title">Pokedex</h1>
+      {pokecards}
+    </div>);
 }
 
 export default Pokedex;
