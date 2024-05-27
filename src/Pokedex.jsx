@@ -1,3 +1,4 @@
+import "./Pokedex.css";
 import Pokecard from "./Pokecard.jsx";
 
 /** Pokedex div of a collection of pokemon cards */
@@ -14,7 +15,7 @@ function Pokedex({ pokemon }) {
   return (
     <div className="Pokedex">
       <h1 className="Pokedex-title">Pokedex</h1>
-      {pokecards}
+      <div className="Pokedex-pokecards">{pokecards}</div>
     </div>);
 }
 
