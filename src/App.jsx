@@ -1,5 +1,4 @@
 import Pokedex from "./Pokedex.jsx";
-import Pokemon from "./Pokecard.jsx";
 
 const POKEMON = [
   { id: 4, name: 'Charmander', type: 'fire', base_experience: 62 },
@@ -13,9 +12,9 @@ const POKEMON = [
 ];
 
 function App() {
-  return <div className="App">
+  return (<div className="App">
     <Pokedex pokemon={POKEMON} />
-  </div>;
+  </div>);
 }
 
 export default App;
