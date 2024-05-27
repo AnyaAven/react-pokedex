@@ -11,6 +11,7 @@ const POKEMON = [
   { id: 133, name: 'Eevee', type: 'normal', base_experience: 65 }
 ];
 
+/** App div */
 function App() {
   return (<div className="App">
     <Pokedex pokemon={POKEMON} />
