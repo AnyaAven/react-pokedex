@@ -1,0 +1,6 @@
+.Pokegame-results {
+  color: green;
+  display: flex;
+  justify-content: center;
+  font-size: 4em;
+}
