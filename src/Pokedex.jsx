@@ -2,7 +2,7 @@ import "./Pokedex.css";
 import Pokecard from "./Pokecard.jsx";
 
 // Add default pokemon
-import POKEMON from "./App.jsx"
+import POKEMON from "./Pokegame.jsx";
 
 /** Pokedex div of a collection of pokemon cards
  *
