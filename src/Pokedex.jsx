@@ -13,11 +13,13 @@ import POKEMON from "./Pokegame.jsx";
 function Pokedex({ pokemon = POKEMON }) {
 
   const pokecards = pokemon.map(
-    p => <Pokecard
+    p => <div key={crypto.randomUUID()}>
+      <Pokecard
       name={p.name}
       type={p.type}
       exp={p.base_experience}
       id={p.id} />
+      </div>
   );
   return (
     <div className="Pokedex">
