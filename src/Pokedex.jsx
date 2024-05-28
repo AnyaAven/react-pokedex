@@ -10,7 +10,7 @@ import POKEMON from "./Pokegame.jsx";
  * pokemon: [{ id, name, type, base_experience },...]
  *
 */
-function Pokedex({ pokemon = POKEMON, isWinner }) {
+function Pokedex({ pokemon = POKEMON }) {
 
   const pokecards = pokemon.map(
     p => <Pokecard
@@ -19,12 +19,10 @@ function Pokedex({ pokemon = POKEMON, isWinner }) {
       exp={p.base_experience}
       id={p.id} />
   );
-  //const totalExp = pokecards.reduce((acc, card)=>{})
   return (
     <div className="Pokedex">
       <h1 className="Pokedex-title">Pokedex</h1>
       <div className="Pokedex-pokecards">{pokecards}</div>
-      <div>YOUR HAND {isWinner ? "WINS" : "LOSES"}</div>
     </div>);
 }
 

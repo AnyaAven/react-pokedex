@@ -1,5 +1,6 @@
 import { sampleSize } from "lodash";
 import Pokedex from "./Pokedex.jsx";
+import "./Pokegame.css"
 
 const POKEMON = [
   { id: 4, name: 'Charmander', type: 'fire', base_experience: 62 },
@@ -14,21 +15,25 @@ const POKEMON = [
 
 /** Pokegame div that has two pokedices */
 function Pokegame({ pokemon = POKEMON }) {
-  const totalExp = pokemon.reduce((acc, p) => (acc += p.base_experience), 0);
-
   const halfDeck = Math.round(POKEMON.length / 2);
   const playerOneHand = sampleSize(POKEMON, halfDeck);
   const playerTwoHand = sampleSize(POKEMON, halfDeck);
-
 
   const playerOneTotalExp = playerOneHand.reduce(
     (acc, p) => (acc += p.base_experience), 0);
   const playerTwoTotalExp = playerTwoHand.reduce(
     (acc, p) => (acc += p.base_experience), 0);
 
+
   return (<div className="Pokegame">
-    <Pokedex pokemon={playerOneHand} isWinner={playerOneTotalExp > playerTwoTotalExp} />
-    <Pokedex pokemon={playerTwoHand} isWinner={playerTwoTotalExp > playerOneTotalExp} />
+    <Pokedex pokemon={playerOneHand} />
+    <Pokedex pokemon={playerTwoHand} />
+    <div className="Pokegame-results">
+      {playerOneTotalExp > playerTwoTotalExp
+      ? "Player 1 wins!"
+      : "Player 2 wins!"
+    }
+    </div>
   </div>);
 }
 
