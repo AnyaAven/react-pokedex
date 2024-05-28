@@ -13,17 +13,23 @@ const POKEMON = [
   { id: 133, name: 'Eevee', type: 'normal', base_experience: 65 }
 ];
 
-/** Pokegame div that has two pokedices */
+/** Pokegame div that has two pokedices
+ *
+ * The Pokedex with the most experience wins
+ *
+ * props:
+ * pokemon: [{ id, name, type, base_experience },...]
+ *
+*/
 function Pokegame({ pokemon = POKEMON }) {
-  const halfDeck = Math.round(POKEMON.length / 2);
-  const playerOneHand = sampleSize(POKEMON, halfDeck);
-  const playerTwoHand = sampleSize(POKEMON, halfDeck);
+  const halfDeck = Math.round(pokemon.length / 2);
+  const playerOneHand = sampleSize(pokemon, halfDeck);
+  const playerTwoHand = sampleSize(pokemon, halfDeck);
 
   const playerOneTotalExp = playerOneHand.reduce(
     (acc, p) => (acc += p.base_experience), 0);
   const playerTwoTotalExp = playerTwoHand.reduce(
     (acc, p) => (acc += p.base_experience), 0);
-
 
   return (<div className="Pokegame">
     <Pokedex pokemon={playerOneHand} />
