@@ -18,4 +18,14 @@ function App() {
   </div>);
 }
 
+//Future docstring for all comps
+/** Comp description
+ *
+ * Props:
+ *
+ * State:
+ *
+ * Effects:
+*/
+
 export default App;

@@ -1,8 +1,16 @@
 import "./Pokedex.css";
 import Pokecard from "./Pokecard.jsx";
 
-/** Pokedex div of a collection of pokemon cards */
-function Pokedex({ pokemon }) {
+// Add default pokemon
+import POKEMON from "./App.jsx"
+
+/** Pokedex div of a collection of pokemon cards
+ *
+ * props:
+ * pokemon: [{ id, name, type, base_experience },...]
+ *
+*/
+function Pokedex({ pokemon = POKEMON }) {
 
   const pokecards = pokemon.map(
     p => <Pokecard
@@ -11,7 +19,7 @@ function Pokedex({ pokemon }) {
       exp={p.base_experience}
       id={p.id} />
   );
-
+  //const totalExp = pokecards.reduce((acc, card)=>{})
   return (
     <div className="Pokedex">
       <h1 className="Pokedex-title">Pokedex</h1>
